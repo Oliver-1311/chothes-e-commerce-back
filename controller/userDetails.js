@@ -15,7 +15,7 @@ async function userDetailsController(req, res) {
         res.json({
             message: error.message || error,
             error: true,
-            succes: false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+            success: false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
         })
     }
 }

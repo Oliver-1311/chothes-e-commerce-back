@@ -36,7 +36,7 @@ async function userSignUpController(req, res) {
 
         res.status(201).json({
             data: saveUser,
-            succes: true,
+            success: true,
             error: false,
             message: "El usuario se creó exitosamente"
         })
@@ -44,7 +44,7 @@ async function userSignUpController(req, res) {
         res.json({
             message: error.message || error,
             error: true,
-            succes: false
+            success: false
         })
     }
 }

@@ -8,6 +8,6 @@ const authToken = require('../middleware/authToken')
 
 router.post("/signup", userSignUpController)
 router.post("/signin", userSignInController)
-router.post("/user-details", authToken,userDetailsController)
+router.get("/user-details", authToken,userDetailsController)
 
 module.exports = router

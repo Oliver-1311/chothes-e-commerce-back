@@ -10,10 +10,10 @@ const app = express()
 const PORT = 8080 || process.env.PORT
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL || '*',
     credentials: true
 }))
-app.use(express.json())
+app.use(express.json({ limit: '10mb' }))
 app.use(cookieParser())
 
 app.use("/api", router)

@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken")
 
-async function authToken(req, res) {
+async function authToken(req, res,next) {
     try {
         const token = req.cookies?.token 
 
@@ -8,7 +8,7 @@ async function authToken(req, res) {
             return res.status(200).json({
                 message: "Por favor inicie sesión...!", 
                 error: true,
-                succes: false
+                success: false
             })
         }
         jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
@@ -25,7 +25,7 @@ async function authToken(req, res) {
             message: error.message || error,
             data: [],
             error: true,
-            succes: false
+            success: false
         })
     }
 }
