@@ -27,3 +27,5 @@ async function uploadProductController(req, res) {
         })
     } 
 }
+
+module.exports = uploadProductController

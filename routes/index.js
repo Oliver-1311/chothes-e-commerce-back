@@ -7,7 +7,9 @@ const userDetailsController = require('../controller/user/userDetails')
 const authToken = require('../middleware/authToken')
 const userLogout = require('../controller/user/userLogout')
 const allUsers = require('../controller/user/allUsers')
+const uploadProductController = require('../controller/products/uploadProduct')
 const updateUser = require('../controller/user/updateUser')
+const getProductController = require('../controller/products/getProduct')
 
 router.post("/signup", userSignUpController)
 router.post("/signin", userSignInController)
@@ -19,6 +21,6 @@ router.get("/all-user", authToken, allUsers)
 router.post("/update-user",authToken, updateUser)
 
 //product 
-router.post("/upload-product", authToken)
-
+router.post("/upload-product",authToken,uploadProductController)
+router.get("/get-product",getProductController)
 module.exports = router
