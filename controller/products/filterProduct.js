@@ -1,6 +1,6 @@
 const productModel = require("../../models/productModel")
 
-const filterProductController = async(req,res)=>{
+async function filterProductController (req,res){
  try{
         const categoryList = req?.body?.category || []
 
